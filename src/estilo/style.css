@@ -1,370 +1,308 @@
-    /* Paleta de cores */
-    :root {
-        --cor-principal: #3b587a; /* Azul principal */
-        --cor-secundaria: #dcdcdc; /* Cinza claro */
-        --cor-destaque: #8593ff; /* Roxo para destaques */
-        --cor-fundo: #f4f4f4; /* Fundo claro */
-        --cor-texto: #333333; /* Texto principal */
-        --cor-texto-claro: #ffffff; /* Texto em áreas escuras */
-    }
+:root {
+    --cor-principal: #3b587a;
+    --cor-secundaria: #dcdcdc;
+    --cor-destaque: #8593ff;
+    --cor-fundo: #f4f4f4;
+    --cor-texto: #333333;
+    --cor-texto-claro: #ffffff;
+}
 
-    /* Reset básico */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    /* Corpo da página */
-    body {
-        font-family: 'Handjet', sans-serif;
-        line-height: 1.6;
-        color: var(--cor-texto);
-        background-color: var(--cor-fundo);
-        padding: 0;
-        margin: 0;
-    }
+body {
+    font-family: 'Handjet', sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
 
-    /* Cabeçalho */
-    header {
-        background-color: var(--cor-principal);
-        color: var(--cor-texto-claro);
-        padding: 1rem;
+header {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    padding: 1rem;
+    text-align: center;
+}
+
+header #perfil {
+    margin-bottom: 1rem;
+}
+
+header #perfil img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+header #perfil h3 {
+    margin: 0.5rem 0;
+}
+
+header nav {
+    margin: 1rem 0;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+header nav ul li a img {
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+}
+
+section {
+    background-color: var(--cor-texto-claro);
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+}
+
+section h2 {
+    border-bottom: 2px solid var(--cor-principal);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--cor-principal);
+}
+
+section h3 img {
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+}
+
+.sobre-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.sobre-texto {
+    flex: 1;
+    color: var(--cor-texto);
+}
+
+.icones_ling img,
+#icones_ling_dados img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icones_ling img {
+    width: 50px;
+    height: 50px;
+}
+
+#icones_ling_dados img {
+    width: 75px;
+    height: 50px;
+}
+
+.icones_ling img:hover,
+#icones_ling_dados img:hover {
+    transform: scale(1.2);
+}
+
+.icones_ling img:active,
+#icones_ling_dados img:active {
+    transform: scale(1.1);
+}
+
+.icones_ling {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#icones_ling_dados {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    left: 50%;
+    background-color: var(--cor-texto);
+    transform: translateX(-50%);
+}
+
+.timeline {
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.timeline ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    list-style-type: none;
+}
+
+.timeline ul li .content {
+    width: 45%; /* Ajuste a largura conforme necessário */
+    text-align: left;
+}
+
+.timeline ul li .date {
+    width: 20%; /* Ajuste a largura conforme necessário */
+    text-align: right;
+}
+
+.timeline ul li:nth-child(even) {
+    flex-direction: row; /* Garante que mesmo os itens pares sigam a mesma direção */
+}
+
+.timeline ul li .date h4 {
+    background-color: var(--cor-destaque);
+    width: 100px;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.timeline ul li .content h3 {
+    padding: 10px 20px;
+    background-color: var(--cor-destaque);
+    margin-bottom: 0;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.timeline ul li .content p {
+    padding: 10px 20px;
+    background-color: var(--cor-secundaria);
+    margin-top: 0;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .sobre-container {
+        flex-direction: column;
         text-align: center;
     }
-
-    header #perfil {
-        margin-bottom: 1rem;
+    
+    .sobre-imagem {
+        margin-top: 20px;
+    }
+    
+    .sobre-imagem img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
     }
 
-    header #perfil img {
-        border-radius: 50%;
-        width: 120px;
-        height: 120px;
-        object-fit: cover;
-    }
-
-    header #perfil h3 {
-        margin: 0.5rem 0;
-    }
-
-    header nav {
-        margin: 1rem 0;
-    }
-
-    header nav ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    header nav ul li {
-        display: inline;
-        margin: 0 1rem;
-    }
-
-    header nav ul li a {
-        color: var(--cor-texto-claro);
-        text-decoration: none;
-        font-size: 1rem;
-    }
-
-    header nav ul li a img {
-        vertical-align: middle;
-        width: 20px;
-        height: 20px;
-        margin-right: 0.5rem;
-    }
-
-    /* Seções */
-    section {
-        background-color: var(--cor-texto-claro);
-        padding: 2rem;
-        margin: 1rem 0;
-        border-radius: 8px;
-    }
-
-    section h2 {
-        border-bottom: 2px solid var(--cor-principal);
-        padding-bottom: 0.5rem;
-        margin-bottom: 1rem;
-        color: var(--cor-principal);
-    }
-
-    section h3 img {
-        vertical-align: middle;
-        width: 20px;
-        height: 20px;
-        margin-right: 0.5rem;
-    }
-
-    /* Seção Sobre */
-    .sobre-container {
-        display: flex;
+    .timeline ul li {
+        flex-direction: column;
+        text-align: center;
         align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-        margin-top: 20px;
     }
 
-    .sobre-texto {
-        flex: 1;
-        color: var(--cor-texto);
+    .timeline ul li:nth-child(even) {
+        flex-direction: column;
     }
 
-    /* Estilos comuns para todos os ícones */
-    .icones_ling img,
-    #icones_ling_dados img {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .timeline ul li .content,
+    .timeline ul li .date {
+        width: auto;
+        padding: 10px;
+        margin: 0 auto;
     }
 
-    .icones_ling img {
-        width: 50px;
-        height: 50px;
+    .timeline ul li .date {
+        margin-bottom: 10px;
     }
 
-    #icones_ling_dados img {
-        width: 75px;
-        height: 50px;
+    .timeline ul li .date h4 {
+        float: none;
+        width: auto;
     }
 
-    /* Efeito de hover e active para ícones */
-    .icones_ling img:hover,
-    #icones_ling_dados img:hover {
-        transform: scale(1.2);
-    }
-
-    .icones_ling img:active,
-    #icones_ling_dados img:active {
-        transform: scale(1.1);
-    }
-
-    /* Estilos específicos para contêineres de ícones */
-    .icones_ling {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 20px;
-    }
-
-    #icones_ling_dados {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 20px;
-    }
-
-    /* Estilo linha do tempo */
     .timeline::before {
         content: "";
         position: absolute;
         height: 100%;
         width: 3px;
         left: 50%;
-        background-color: var(--cor-texto); /* Mantém a linha 100% opaca */
-        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0);
     }
 
-    .timeline {
-        position: relative;
-        margin: 0 auto;
-        width: 90%;
-    }
-
-    .timeline ul li {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-bottom: 50px;
-        list-style-type: none;
-    }
-
-    .timeline ul li .content {
-        width: 50%;
-        padding: 0 20px;
-    }
-
-    .timeline ul li .date {
-        width: 50%;
-        padding: 0 20px;
-        font-weight: normal;
-    }
-
-    .timeline ul li:nth-child(even) {
-        flex-direction: row-reverse;
-    }
-
-    .timeline ul li:nth-child(even) .date h4 {
-        float: right;
-    }
-
-    .timeline ul li .content h3 {
-        padding: 10px 20px;
-        background-color: var(--cor-destaque);
-        margin-bottom: 0;
-        text-align: center;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
-
-    .timeline ul li .content p {
-        padding: 10px 20px;
-        background-color: var(--cor-secundaria);
-        margin-top: 0;
-        text-align: center;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
-
-    .timeline ul li .date h4 {
-        background-color: var(--cor-destaque);
-        width: 100px;
-        text-align: center;
-        padding: 5px 10px;
-        border-radius: 10px;
-    }
-/*
-    .sobre-imagem{
-        width: 100px;
-    }
-
-    .slider {
-        display: flex;
-        flex-wrap: nowrap; 
-        overflow-x: auto;
-        width: 100%;
-        padding: 10px; 
-        box-sizing: border-box; 
-        scrollbar-width: thin; 
-        scrollbar-color: #888 #f1f1f1; 
-    }
-    
-    .slider::-webkit-scrollbar {
-        height: 8px; 
-    }
-    
-    .slider::-webkit-scrollbar-thumb {
-        background: #888; 
-        border-radius: 10px; 
-    }
-    
-    .slider::-webkit-scrollbar-track {
-        background: #f1f1f1; 
-    }
-    
     .slide {
-        flex: 0 0 auto; 
-        margin: 10px;
-        width: auto; 
+        width: calc(50% - 20px);
     }
-    
-    .slide img {
-        display: block; 
-        width: 100%;
-        height: auto;
-    }
-    
-   */ 
+}
 
-    /* Responsividade para telas menores */
-    @media (max-width: 768px) {
-        .sobre-container {
-            flex-direction: column;
-            text-align: center;
-        }
-    
-        .sobre-imagem {
-            margin-top: 20px;
-        }
-    
-        .sobre-imagem img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .timeline ul li {
-            flex-direction: column;
-            text-align: center;
-            align-items: center;
-        }
+a {
+    transition: 0.5s;
+    color: var(--cor-texto);
+    text-decoration: none;
+}
 
-        .timeline ul li:nth-child(even) {
-            flex-direction: column;
-        }
+a:hover {
+    transition: 0.2s;
+    text-decoration: underline;
+    font-size: large;
+}
 
-        .timeline ul li .content,
-        .timeline ul li .date {
-            width: auto;
-            padding: 10px;
-            margin: 0 auto;
-        }
-
-        .timeline ul li .date {
-            margin-bottom: 10px;
-        }
-
-        .timeline ul li .date h4 {
-            float: none;
-            width: auto;
-        }
-
-        .timeline::before {
-            content: "";
-            position: absolute;
-            height: 100%;
-            width: 3px;
-            left: 50%;
-            background-color:rgba(0, 0, 0, 0) /* Mantém a linha 100% opaca */
-        }
-        .slide {
-            width: calc(50% - 20px);
-        }
-    }
-
-    /* Links */
-    a {
-        transition: 0.5s;
-        color: var(--cor-texto);
-        text-decoration: none;
-    }
-
-    a:hover {
-        transition: 0.2s;
-        text-decoration: underline;
-        font-size: large;
-    }
-
-/* Estilos para a seção de contato */
 #contato_div {
-    display: flex; /* Use flexbox para organizar os ícones */
-    justify-content: center; /* Centraliza os ícones horizontalmente */
-    align-items: center; /* Centraliza os ícones verticalmente */
-    gap: 20px; /* Espaçamento entre os ícones */
-    margin-top: 20px; /* Espaçamento superior opcional */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 #contato_div a {
-    display: inline-block; /* Permite aplicar estilos como padding e margin */
-    transition: transform 0.3s ease; /* Adiciona uma transição suave ao hover */
+    display: inline-block;
+    transition: transform 0.3s ease;
 }
 
 #contato_div a:hover {
-    transform: scale(1.1); /* Aumenta o tamanho dos ícones ao passar o mouse */
+    transform: scale(1.1);
 }
 
 #contato_div img {
-    width: 40px; /* Define a largura dos ícones */
-    height: auto; /* Mantém a proporção da altura */
+    width: 40px;
+    height: auto;
 }
 
-    /* Rodapé */
-    footer {
-        background-color: var(--cor-principal);
-        color: var(--cor-texto-claro);
-        text-align: center;
-        bottom: 0;
-        width: 100%;
-    }
+footer {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
 
-    footer a {
-        color: var(--cor-texto-claro);
-    }
+footer a {
+    color: var(--cor-texto-claro);
+}
