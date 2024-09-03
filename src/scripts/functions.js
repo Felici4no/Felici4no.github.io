@@ -140,7 +140,7 @@ function renderCertificates() {
         listItem.innerHTML = `
             <div class="content">
                 <h3>${cert.title}</h3>
-                <p><a href="${cert.link}">Certificado</a></p>
+                <p><a href="${cert.link}">Link Certificado</a></p>
             </div>
             <div class="date">
                 <h4>${cert.date}</h4>

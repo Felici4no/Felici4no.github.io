@@ -1,10 +1,11 @@
 :root {
     --cor-principal: #3b587a;
     --cor-secundaria: #dcdcdc;
-    --cor-destaque: #8593ff;
+    --cor-destaque: #8593ff7e;
     --cor-fundo: #f4f4f4;
-    --cor-texto: #333333;
+    --cor-texto: #000000;
     --cor-texto-claro: #ffffff;
+    --cor-texto-header:black;
 }
 
 * {
@@ -21,10 +22,15 @@ body {
 }
 
 header {
+    font-family:'Times New Roman', Times, serif;
     background-color: var(--cor-principal);
-    color: var(--cor-texto-claro);
+    color: var(--cor-texto-header);
     padding: 1rem;
     text-align: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.496), rgba(255, 255, 255, 0.5)), url('https://media.licdn.com/dms/image/v2/D4D22AQHQmIP0lVbMtg/feedshare-shrink_1280/feedshare-shrink_1280/0/1714746712552?e=1728518400&v=beta&t=LxiYMK0XIm3-g72ebFxZuHe9wcAOF1_9_8mNoYo9jrU'); 
+    background-size: cover; /* Faz a imagem cobrir todo o header */
+    background-position: center; /* Centraliza a imagem no header */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
 }
 
 header #perfil {
@@ -43,7 +49,7 @@ header #perfil h3 {
 }
 
 header nav {
-    margin: 1rem 0;
+    margin: 1rem ;
 }
 
 header nav ul {
@@ -56,16 +62,15 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: var(--cor-texto-claro);
+    color: var(--cor-texto-header);
     text-decoration: none;
-    font-size: 1rem;
 }
 
 header nav ul li a img {
     vertical-align: middle;
     width: 20px;
     height: 20px;
-    margin-right: 0.5rem;
+    margin-right: 2rem;
 }
 
 section {
@@ -206,6 +211,21 @@ section h3 img {
 }
 
 @media (max-width: 768px) {
+
+    
+    header nav ul li a {
+        display:flex;
+        font-size: 2rem;
+
+    }
+
+    header nav ul li a img {
+        vertical-align: middle;
+        width: 40px;
+        height: 40px;
+
+    }
+
     .sobre-container {
         flex-direction: column;
         text-align: center;
@@ -271,6 +291,13 @@ a:hover {
     transition: 0.2s;
     text-decoration: underline;
     font-size: large;
+}
+
+#contato{
+    height: 400px;
+    align-items: center;
+    
+
 }
 
 #contato_div {
