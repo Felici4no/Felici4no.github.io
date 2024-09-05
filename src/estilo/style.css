@@ -22,7 +22,6 @@ body {
 }
 
 header {
-    font-family:'Times New Roman', Times, serif;
     background-color: var(--cor-principal);
     color: var(--cor-texto-header);
     padding: 1rem;
