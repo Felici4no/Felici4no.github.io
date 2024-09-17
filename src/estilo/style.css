@@ -5,12 +5,12 @@
     --text-secondary: #b0b0b0;
     --text-title: #ffffff;
     --button-bg: #333333;
-    --button-hover-bg: #33333354;
+    --button-hover-bg: #444444;
     --modal-bg: rgba(0, 0, 0, 0.4);
-    --modal-content-bg: white;
-    --modal-border: #888;
-    --close-btn: #aaa;
-    --close-btn-hover: #000;
+    --modal-content-bg: #1e1e1e;
+    --modal-border: #444444;
+    --close-btn: #e0e0e0;
+    --close-btn-hover: #ffffff;
 }
 
 * {
@@ -56,13 +56,14 @@ body {
     margin-bottom: 20px;
 }
 
-/* Adiciona espaçamento e quebra de linha para os links */
+/* Links */
 .links {
     display: flex;
     flex-wrap: wrap; /* Permite que os itens quebrem a linha */
     justify-content: center; /* Centraliza os links */
     gap: 10px; /* Espaçamento entre os itens */
 }
+
 .links img {
     width: 100%;
 }
@@ -79,21 +80,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center; /* Garante que o texto dentro do botão fique centralizado */
+    text-align: center;
 }
 
 .links a:hover {
     background-color: var(--button-hover-bg); /* Cor ao passar o mouse */
     transform: scale(1.05); /* Efeito zoom */
 }
-button{
-    background-color: var(--background-container);
-    color: var(--text-secondary);
-    border: none;
-    text-decoration: underline;
-}
+
 /* Estilos para o Modal */
 .modal {
+    transition: 0.2s;
     display: none; /* Escondido por padrão */
     position: fixed; /* Fica fixo na tela */
     z-index: 1; /* Sobre outros elementos */
@@ -104,17 +101,37 @@ button{
     background-color: var(--modal-bg); /* Fundo semi-transparente */
 }
 
+button{
+    background-color: var(--background-container);
+    border-color: #b0b0b0;
+    color: var(--text-light);
+    width: 100px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
 /* Conteúdo do Modal */
 .modal-content {
     font-size: large;
     background-color: var(--background-dark); /* Fundo do conteúdo do modal */
-    color: var(--modal-border);
+    color: var(--text-light);
     margin: 10% auto; /* Centraliza verticalmente */
     padding: 20px;
     box-shadow: 5px 5px 5px black;
     width: 80%; /* Largura do modal */
     max-width: 500px; /* Limita o tamanho máximo */
     border-radius: 10px; /* Bordas arredondadas */
+    transition: all 0.3s ease;
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+    .modal-content {
+        margin: 75% auto; /* Centraliza verticalmente */
+        width: 90%; /* Ajuste para telas menores */
+        padding: 15px; /* Reduz o padding para encaixar melhor */
+        font-size: medium; /* Ajusta o tamanho da fonte */
+    }
 }
 
 /* Botão de fechar (X) */
@@ -123,11 +140,12 @@ button{
     float: right;
     font-size: 28px;
     font-weight: bold;
+    background-color: transparent; /* Remove o fundo do botão */
+    border: none; /* Remove bordas */
+    cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
     color: var(--close-btn-hover); /* Cor ao passar o mouse no botão de fechar */
-    text-decoration: none;
-    cursor: pointer;
 }
