@@ -1,3 +1,18 @@
+:root {
+    --background-dark: #121212;
+    --background-container: #1e1e1e;
+    --text-light: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --text-title: #ffffff;
+    --button-bg: #333333;
+    --button-hover-bg: #33333354;
+    --modal-bg: rgba(0, 0, 0, 0.4);
+    --modal-content-bg: white;
+    --modal-border: #888;
+    --close-btn: #aaa;
+    --close-btn-hover: #000;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,16 +21,16 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212; /* Fundo escuro */
+    background-color: var(--background-dark); /* Fundo escuro */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #e0e0e0; /* Texto claro */
+    color: var(--text-light); /* Texto claro */
 }
 
 .container {
-    background-color: #1e1e1e; /* Fundo do container */
+    background-color: var(--background-container); /* Fundo do container */
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
@@ -33,11 +48,11 @@ body {
 .profile h1 {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #ffffff; /* Cor do título */
+    color: var(--text-title); /* Cor do título */
 }
 
 .profile p {
-    color: #b0b0b0; /* Cor do texto secundário */
+    color: var(--text-secondary); /* Cor do texto secundário */
     margin-bottom: 20px;
 }
 
@@ -55,8 +70,8 @@ body {
 .links a {
     max-width: 100px;
     padding: 10px;
-    background-color: #333333; /* Fundo dos botões */
-    color: #ffffff; /* Texto dos botões */
+    background-color: var(--button-bg); /* Fundo dos botões */
+    color: var(--text-title); /* Texto dos botões */
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -68,6 +83,51 @@ body {
 }
 
 .links a:hover {
-    background-color: #33333354; /* Cor ao passar o mouse */
+    background-color: var(--button-hover-bg); /* Cor ao passar o mouse */
     transform: scale(1.05); /* Efeito zoom */
+}
+button{
+    background-color: var(--background-container);
+    color: var(--text-secondary);
+    border: none;
+    text-decoration: underline;
+}
+/* Estilos para o Modal */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fica fixo na tela */
+    z-index: 1; /* Sobre outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-bg); /* Fundo semi-transparente */
+}
+
+/* Conteúdo do Modal */
+.modal-content {
+    font-size: large;
+    background-color: var(--background-dark); /* Fundo do conteúdo do modal */
+    color: var(--modal-border);
+    margin: 10% auto; /* Centraliza verticalmente */
+    padding: 20px;
+    box-shadow: 5px 5px 5px black;
+    width: 80%; /* Largura do modal */
+    max-width: 500px; /* Limita o tamanho máximo */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Botão de fechar (X) */
+.close {
+    color: var(--close-btn); /* Cor do botão de fechar */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--close-btn-hover); /* Cor ao passar o mouse no botão de fechar */
+    text-decoration: none;
+    cursor: pointer;
 }
