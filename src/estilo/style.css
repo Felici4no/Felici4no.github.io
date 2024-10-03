@@ -30,7 +30,7 @@ body {
 }
   
 .container {
-   width: 550px;
+    width: 550px;
     background-color: var(--background-container); /* Fundo do container */
     border-radius: 1px;
     padding: 10px;
@@ -59,6 +59,7 @@ body {
 
 /* Links */
 .links {
+    
     display: flex;
     flex-wrap: wrap; /* Permite que os itens quebrem a linha */
     justify-content: center; /* Centraliza os links */
@@ -67,6 +68,7 @@ body {
 }.links img {
     width: 100%;
 }.links a {
+    height: 75px;
     gap: 10px;
     padding: 10px;
     background-color: var(--button-bg); /* Fundo dos botões */
