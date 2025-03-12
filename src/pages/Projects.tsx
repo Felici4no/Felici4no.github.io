@@ -11,6 +11,14 @@ function Projects() {
       github: "https://github.com/Felici4no/SudokuGen",
       demo: "https://github.com/Felici4no/SudokuGen"
     },
+    {
+      title: "PyCriptoNita",
+      description: "PyCriptoNita is a simple Python script designed to encrypt and decrypt text messages using a randomly generated substitution cipher .",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=600",
+      technologies: ["Python"],
+      github: "https://github.com/Felici4no/PyCriptoNita",
+      demo: "https://github.com/Felici4no/PyCriptoNita"
+    },
  
   ];
 
